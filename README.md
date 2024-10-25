@@ -104,3 +104,31 @@ classDiagram
 
     Professor "1...5" --> "0..*"Student: supervises
 ```
+
+## State Diagram
+
+```mermaid
+stateDiagram-v2
+    state H <<choice>>
+    [*] --> A
+    A: Insert ATM Card
+    A --> B
+    B: Enter PIN
+    B --> C: Valid
+    C: Choose Transaction
+    B --> D: Invalid
+    D: Terminate Transaction
+    D --> [*]
+    D --> A
+    C --> G: Check Balance
+    G: Another operation
+    G --> H
+    H --> C: Yes
+    H --> D : No
+    C --> I : Deposit
+    C --> I: Withdraw
+    I: Perform Operation
+    I --> J
+    J: Update Account
+    J --> H
+```
