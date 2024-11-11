@@ -132,3 +132,25 @@ stateDiagram-v2
     J: Update Account
     J --> H
 ```
+
+## Add links to nodes example
+
+### Example 1:
+
+```mermaid
+graph TD
+B[an <b>important</b> <a href='http://google.com'>link</a>] 
+```
+
+### Example 2:
+
+```mermaid
+flowchart LR
+    A-->B
+    B-->C
+    C-->D
+    click A callback "Tooltip for a callback"
+    click B "http://www.github.com" "This is a tooltip for a link" _blank
+    click A call callback() "Tooltip for a callback"
+    click B href "http://www.github.com" "This is a tooltip for a link" _blank
+```
